@@ -12,7 +12,7 @@ func ViewHandler(ctx *gin.Context) {
 	var paste models.Paste
 	pasteID := ctx.Param("id")
 
-	db := clientInstance.Database("pastes").Collection("data")
+	db := MongoInstance.Database("pastes").Collection("data")
 	err := db.FindOne(ctx, bson.M{"_id": pasteID}).Decode(&paste)
 	if err != nil {
 		log.Fatalln(err)

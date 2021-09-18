@@ -4,27 +4,25 @@ import (
 	"context"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"sync"
+	"log"
 )
 
 const connectionString = ""
 
-var mongoInstance sync.Once
-var clientInstance *mongo.Client
-var clientError error
+var MongoInstance = Connection()
 
-func GetMongoClient() {
-	mongoInstance.Do(func() {
-		clientOptions := options.Client().ApplyURI(connectionString)
-		client, err := mongo.Connect(context.TODO(), clientOptions)
-		if err != nil {
-			clientError = err
-		}
+func Connection() *mongo.Client {
+	clientOptions := options.Client().ApplyURI(connectionString)
 
-		err = client.Ping(context.TODO(), nil)
-		if err != nil {
-			clientError = err
-		}
-		clientInstance = client
-	})
+	client, err := mongo.Connect(context.TODO(), clientOptions)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	err = client.Ping(context.TODO(), nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	return client
 }

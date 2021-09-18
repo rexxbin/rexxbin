@@ -8,15 +8,14 @@ import (
 )
 
 func main() {
-	handlers.GetMongoClient()
 	gin.SetMode(gin.DebugMode)
 
 	router := gin.Default()
 	router.LoadHTMLGlob("static/*")
 
-	router.GET("/", func(ctx *gin.Context) {
+	router.GET("", func(ctx *gin.Context) {
 		ctx.HTML(http.StatusOK, "index.html", gin.H{
-			"title": "BinGO - Pastebin Service",
+			"title": "Rektbin - Pastebin Service",
 		})
 	})
 
