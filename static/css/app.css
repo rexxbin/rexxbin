@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 
 :root {
 	color: white;
@@ -111,6 +112,17 @@ div#stuff-links a {
 	background-color: #F5F5F5;
 }
 
-main {
+textarea {
 	background: var(--textarea-color);
+	font-family: "JetBrains Mono", "Rubik", monospace !important;
+	color: white;
+	padding: 20px;
+	display: flex !important;
+	width: 100%;
+	height: 100%;
+	resize: unset !important;
+	border: none;
+	overflow: auto;
+	outline: none;
+	box-shadow: none;
 }
