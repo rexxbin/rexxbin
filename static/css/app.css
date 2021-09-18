@@ -8,7 +8,7 @@
 	--accent-color: #7c91e2;
 	--dark-bg-color: #1e1e1e;
 	--disabled-color: #505050;
-	--textarea-color: #282828;
+	--textarea-color: #252525;
 }
 
 *, body, html {
@@ -116,7 +116,7 @@ textarea {
 	background: var(--textarea-color);
 	font-family: "JetBrains Mono", "Rubik", monospace !important;
 	color: white;
-	padding: 20px;
+	padding: 15px;
 	display: flex !important;
 	width: 100%;
 	height: 100%;
