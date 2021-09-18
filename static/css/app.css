@@ -126,3 +126,7 @@ textarea {
 	outline: none;
 	box-shadow: none;
 }
+
+.actions {
+	font-size: 1.4rem;
+}

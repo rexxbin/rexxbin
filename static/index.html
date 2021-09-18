@@ -27,14 +27,15 @@
 		</div>
 
 		<div class="actions">
-			<button class="fas fa-save action" id="save"></button>
+			<button onclick="copyToClipboard()" class="fas fa-copy action" disabled id="copy"></button>
+			<button class="fas fa-save action" disabled id="save"></button>
 			<button class="fas fa-code action" disabled id="raw"></button>
-			<button class="fas fa-plus action" id="new"></button>
+			<button class="fas fa-plus action" disabled id="new"></button>
 		</div>
 	</header>
 
 	<main role="main" class="flex-grow-1 overflow-auto">
-		<textarea placeholder="Paste code, save and share the link!" spellcheck="false"></textarea>
+		<textarea id="content" placeholder="Paste code, save and share the link!" spellcheck="false"></textarea>
 	</main>
 
 	<footer>
@@ -60,6 +61,8 @@
 		integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
 		crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/e17019efc5.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/app.js"></script>
 </body>
 
 </html>
