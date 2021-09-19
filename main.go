@@ -11,13 +11,15 @@ func main() {
 	gin.SetMode(gin.DebugMode)
 
 	router := gin.Default()
+	router.Use(gin.Logger())
+
 	router.LoadHTMLGlob("static/*.html")
 	router.Static("/css", "static/css/")
 	router.Static("/js", "static/js/")
 
 	router.GET("/", func(ctx *gin.Context) {
 		ctx.HTML(http.StatusOK, "index.html", gin.H{
-			"title": "Rexxbin - Pastebin Service",
+			"title": "Rexxbin - Pastebin written in Go",
 			"year":  2021,
 		})
 	})
@@ -30,7 +32,7 @@ func main() {
 
 	router.POST("/api/paste", handlers.PasteHandler)
 
-	router.GET("/:id", handlers.ViewHandler)
+	router.GET("/v/:id", handlers.ViewHandler)
 
 	err := router.Run(":8000")
 	if err != nil {

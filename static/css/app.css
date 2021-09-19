@@ -127,6 +127,7 @@ textarea {
 	overflow: auto;
 	outline: none;
 	box-shadow: none;
+	font-size: .9rem !important;
 }
 
 .actions {

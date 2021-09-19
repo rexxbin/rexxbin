@@ -3,6 +3,7 @@ package handlers
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/rs/xid"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"rexxbin/database"
@@ -12,11 +13,11 @@ import (
 
 func PasteHandler(ctx *gin.Context) {
 	pasteID := xid.NewWithTime(time.Now()).String()
-	pasteContent := ctx.PostForm("content")
+	pasteContent, _ := ioutil.ReadAll(ctx.Request.Body)
 
 	pasteModel := models.Paste{
 		ID:        pasteID,
-		Content:   pasteContent,
+		Content:   string(pasteContent),
 		CreatedAt: time.Now(),
 	}
 
@@ -24,6 +25,6 @@ func PasteHandler(ctx *gin.Context) {
 	if err != nil {
 		log.Fatalln(err)
 	} else {
-		ctx.Redirect(http.StatusMovedPermanently, "/"+pasteID)
+		ctx.Redirect(http.StatusMovedPermanently, "/v/"+pasteID)
 	}
 }
