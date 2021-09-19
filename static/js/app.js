@@ -23,12 +23,16 @@ $(document).ready(function () {
 	}
 
 	async function createPaste(content) {
-		let response = await fetch("/api/paste", {
+		await fetch("/api/paste", {
 			method: "POST",
 			headers: {"Content-Type": "application/json"},
 			body: content
-		})
-		console.log(response)
+		}).then(res => {
+				if (res.ok) {
+					window.location.href = res.url
+				}
+			}
+		)
+
 	}
 });
-

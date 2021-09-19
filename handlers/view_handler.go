@@ -19,8 +19,9 @@ func ViewHandler(ctx *gin.Context) {
 		log.Fatalln(err)
 	}
 
-	ctx.HTML(http.StatusOK, "view.html", gin.H{
+	ctx.HTML(http.StatusOK, "index.html", gin.H{
 		"title": "Paste - " + paste.ID,
+		"year":  2021,
 		"body":  paste.Content,
 	})
 }
