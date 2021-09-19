@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/rektbin.iml" filepath="$PROJECT_DIR$/.idea/rektbin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/rexxbin.iml" filepath="$PROJECT_DIR$/.idea/rexxbin.iml" />
     </modules>
   </component>
 </project>

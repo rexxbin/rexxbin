@@ -4,14 +4,14 @@ import (
 	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
-	"rektbin/handlers"
+	"rexxbin/handlers"
 )
 
 func main() {
 	gin.SetMode(gin.DebugMode)
 
 	router := gin.Default()
-	router.LoadHTMLGlob("static/*")
+	router.LoadHTMLGlob("static/*.html")
 
 	router.GET("", func(ctx *gin.Context) {
 		ctx.HTML(http.StatusOK, "index.html", gin.H{

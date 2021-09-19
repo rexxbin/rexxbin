@@ -1,4 +1,4 @@
-module rektbin
+module rexxbin
 
 go 1.17
 

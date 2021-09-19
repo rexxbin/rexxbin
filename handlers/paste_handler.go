@@ -5,7 +5,8 @@ import (
 	"github.com/rs/xid"
 	"log"
 	"net/http"
-	"rektbin/models"
+	"rexxbin/database"
+	"rexxbin/models"
 	"time"
 )
 
@@ -19,7 +20,7 @@ func PasteHandler(ctx *gin.Context) {
 		CreatedAt: time.Now(),
 	}
 
-	_, err := MongoInstance.Database("pastes").Collection("data").InsertOne(ctx, pasteModel)
+	_, err := database.MongoInstance.Database("pastes").Collection("data").InsertOne(ctx, pasteModel)
 	if err != nil {
 		log.Fatalln(err)
 	} else {
