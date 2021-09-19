@@ -8,9 +8,11 @@ function copyToClipboard() {
 }
 
 $(document).ready(function () {
-	const button = document.getElementById('copy')
+	const copyButton = document.getElementById('copy')
+	const saveButton = document.getElementById('save')
 
 	textarea.addEventListener('keyup', function () {
-		button.disabled = !this.value;
+		copyButton.disabled = !this.value;
+		saveButton.disabled = !this.value;
 	});
 });

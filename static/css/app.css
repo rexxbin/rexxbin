@@ -30,6 +30,7 @@ header {
 	box-sizing: border-box;
 	justify-content: space-between;
 	padding: 10px 15px 10px 15px;
+	user-select: none;
 }
 
 div.title a {
@@ -76,6 +77,7 @@ footer {
 	padding-left: 15px;
 	font-size: 1.1rem;
 	justify-content: space-between;
+	user-select: none;
 }
 
 footer a {
