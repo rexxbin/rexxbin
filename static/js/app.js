@@ -11,7 +11,7 @@ $(document).ready(function () {
 	});
 
 	newButton.onclick = () => window.location.href = '/'
-	rawButton.onclick = () => window.location.href = '/raw'
+	rawButton.style.display = "none"
 
 	copyButton.onclick = () => copyToClipboard()
 	saveButton.onclick = async () => await createPaste(textarea.value)
@@ -33,6 +33,15 @@ $(document).ready(function () {
 				}
 			}
 		)
+	}
 
+	if (window.location.href.indexOf("/v/") > -1) {
+		textarea.readOnly = true
+
+		rawButton.onclick = () => window.location.href += '/raw'
+		saveButton.remove()
+
+		rawButton.style.display = "revert"
+		copyButton.disabled = false;
 	}
 });
