@@ -8,5 +8,9 @@
     <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="e17019efc5" level="application" />
     <orderEntry type="library" name="jquery" level="application" />
+    <orderEntry type="library" name="codemirror" level="application" />
+    <orderEntry type="library" name="prism" level="application" />
+    <orderEntry type="library" name="default" level="application" />
+    <orderEntry type="library" name="highlight.js" level="application" />
   </component>
 </module>

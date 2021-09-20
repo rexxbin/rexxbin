@@ -4,6 +4,8 @@ $(document).ready(function () {
 	const saveButton = document.getElementById('save')
 	const newButton = document.getElementById('new')
 	const rawButton = document.getElementById('raw')
+	const viewArea = document.getElementById('view-code')
+
 
 	textarea.addEventListener('keyup', function () {
 		copyButton.disabled = !this.value;
@@ -12,6 +14,7 @@ $(document).ready(function () {
 
 	newButton.onclick = () => window.location.href = '/'
 	rawButton.style.display = "none"
+	viewArea.style.display = "none"
 
 	copyButton.onclick = () => copyToClipboard()
 	saveButton.onclick = async () => await createPaste(textarea.value)
@@ -43,5 +46,8 @@ $(document).ready(function () {
 
 		rawButton.style.display = "revert"
 		copyButton.disabled = false;
+		textarea.remove()
+		viewArea.style.display = "block"
+		hljs.highlightAll();
 	}
 });

@@ -116,7 +116,7 @@ div#stuff-links a {
 
 textarea {
 	background: var(--textarea-color);
-	font-family: "JetBrains Mono", "Rubik", monospace !important;
+	font-family: "JetBrains Mono", monospace !important;
 	color: white;
 	padding: 15px;
 	display: flex !important;
@@ -132,4 +132,31 @@ textarea {
 
 .actions {
 	font-size: 1.4rem;
+}
+
+pre {
+	display: block;
+	overflow: auto;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	margin-bottom: unset !important;
+	margin-top: unset;
+	white-space: normal;
+}
+
+code {
+	width: 100%;
+	height: 100%;
+	font-size: 1.3rem;
+}
+
+.hljs {
+	background: var(--textarea-color) !important;
+	color: white !important;
+	white-space: pre-wrap;
+}
+
+pre, code, [class*="hljs-"] {
+	font-family: 'JetBrains Mono', monospace !important;
 }

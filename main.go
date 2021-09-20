@@ -34,6 +34,9 @@ func main() {
 
 	router.GET("/v/:id", handlers.ViewHandler)
 
+	router.GET("/v/:id/raw", func(ctx *gin.Context) {
+	})
+
 	err := router.Run(":8000")
 	if err != nil {
 		log.Fatalln(err)
