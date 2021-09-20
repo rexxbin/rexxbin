@@ -4,8 +4,17 @@ import (
 	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
+	"os"
 	"rexxbin/handlers"
 )
+
+func getPort() string {
+	p := os.Getenv("PORT")
+	if p != "" {
+		return ":" + p
+	}
+	return ":8000"
+}
 
 func main() {
 	gin.SetMode(gin.DebugMode)
@@ -37,7 +46,7 @@ func main() {
 	router.GET("/v/:id/raw", func(ctx *gin.Context) {
 	})
 
-	err := router.Run(":8000")
+	err := router.Run(getPort())
 	if err != nil {
 		log.Fatalln(err)
 	}
