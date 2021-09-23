@@ -65,7 +65,7 @@ button[disabled]:hover {
 }
 
 footer {
-	height: 2.7rem;
+	height: 2.5rem;
 	width: 100%;
 	bottom: 0;
 	background: var(--dark-bg-color);
@@ -75,7 +75,7 @@ footer {
 	box-sizing: border-box;
 	padding-right: 15px;
 	padding-left: 15px;
-	font-size: 1.1rem;
+	font-size: 1rem;
 	justify-content: space-between;
 	user-select: none;
 }
