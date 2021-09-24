@@ -17,7 +17,7 @@ func getPort() string {
 }
 
 func main() {
-	gin.SetMode(gin.ReleaseMode)
+	gin.SetMode(gin.DebugMode)
 
 	router := gin.Default()
 	router.Use(gin.Logger())
