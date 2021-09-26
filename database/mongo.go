@@ -14,7 +14,7 @@ var MongoInstance = Connection()
 func Connection() *mongo.Client {
 	err := godotenv.Load()
 	if err != nil {
-		log.Fatal("Error loading .env file")
+		log.Println("Error loading .env file")
 	}
 
 	var connectionURL = os.Getenv("DB_URL")
