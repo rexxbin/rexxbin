@@ -70,7 +70,7 @@ button[disabled]:hover {
 }
 
 footer {
-	height: 2.7rem;
+	height: 2.5rem;
 	width: 100%;
 	background: var(--dark-bg-color);
 	color: var(--primText-color);
