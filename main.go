@@ -23,8 +23,6 @@ func main() {
 	router.Use(gin.Logger())
 
 	router.LoadHTMLGlob("static/*.html")
-	router.Static("/css", "static/css/")
-	router.Static("/js", "static/js/")
 
 	router.GET("/", func(ctx *gin.Context) {
 		ctx.HTML(http.StatusOK, "index.html", gin.H{
