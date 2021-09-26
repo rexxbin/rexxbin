@@ -10,7 +10,7 @@
 
 	<link href="/css/app.css" rel="stylesheet">
 	<link rel="stylesheet"
-		  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/night-owl.min.css">
+		  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/srcery.min.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
 		  integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
@@ -21,18 +21,18 @@
 	<header>
 		<div class="title">
 			<a href="/">
-					<span>
-						<<i><span><b style="color: var(--accent-color)">rexx</b></span></i><i><span
-						style="color: #A8A8A8">bin</span></i>/>
+					<span style="color: var(--primText-color)">
+						<<span><b style="color: var(--accent-color)">rexx</b></span><span
+						style="color: var(--primText-color)">bin</span>/>
 					</span>
 			</a>
 		</div>
 
 		<div class="actions">
-			<button class="fas fa-copy action" disabled id="copy"></button>
-			<button class="fas fa-save action" disabled id="save"></button>
-			<button class="fas fa-code action" id="raw"></button>
-			<button class="fas fa-plus action" id="new"></button>
+			<button class="fas " disabled id="copy"><i data-feather="copy"></i></button>
+			<button class="fas " disabled id="save"><i data-feather="save"></i></button>
+			<button class="fas " id="raw"><i data-feather="code"></i></button>
+			<button  id="new"><i data-feather="plus-square"></i></button>
 		</div>
 	</header>
 
@@ -45,25 +45,20 @@
 	<footer>
 		<div id="copyright">
 			Copyright &copy; {{ .year }} -
-			<a href="https://github.com/Yash-Garg" rel="noopener" target="_blank">Yash Garg</a>
-		</div>
-		<div id="stuff-links">
-			<div>
-				<a href="/">About</a>
-			</div>
-			<div>
-				<a href="https://telegram.me/smart_geek" target="_blank">Contact</a>
-			</div>
-			<div>
-				<a href="https://github.com/RandStash/rexxbin" target="_blank">Source</a>
-			</div>
+			<a href="https://github.com/rexxbin/rexxbin" rel="noopener" target="_blank">Yash Garg</a>
 		</div>
 	</footer>
 </div>
 
+<script src="https://unpkg.com/feather-icons"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
 		crossorigin="anonymous"></script>
+		<script>
+			feather.replace()
+		</script>
+		
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
 <script src="https://kit.fontawesome.com/e17019efc5.js" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
