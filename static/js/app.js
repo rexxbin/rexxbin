@@ -19,7 +19,7 @@ $(document).ready(function () {
 	saveButton.onclick = async () => await createPaste(textarea.value);
 
 	copyButton.onclick = () => navigator.clipboard.writeText(window.location.href).then(() => {
-		window.confirm("URL Copied to Clipboard!");
+		alert("URL Copied to Clipboard!");
 	});
 
 	if (window.location.href.indexOf("/v/") > -1) {
