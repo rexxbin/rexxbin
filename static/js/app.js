@@ -15,28 +15,12 @@ $(document).ready(function () {
 	rawButton.style.display = "none";
 	viewArea.style.display = "none";
 
-	copyButton.onclick = () => copyToClipboard();
+	copyButton.style.display = "none";
 	saveButton.onclick = async () => await createPaste(textarea.value);
 
-	function copyToClipboard() {
-		textarea.select();
-		textarea.setSelectionRange(0, 99999);
-		navigator.clipboard
-			.writeText(textarea.value)
-			.then((_) => console.log("Copied!"));
-	}
-
-	async function createPaste(content) {
-		await fetch("/api/paste", {
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			body: content,
-		}).then((res) => {
-			if (res.ok) {
-				window.location.href = res.url;
-			}
-		});
-	}
+	copyButton.onclick = () => navigator.clipboard.writeText(window.location.href).then(() => {
+		window.confirm("URL Copied to Clipboard!");
+	});
 
 	if (window.location.href.indexOf("/v/") > -1) {
 		textarea.readOnly = true;
@@ -45,9 +29,23 @@ $(document).ready(function () {
 		saveButton.remove();
 
 		rawButton.style.display = "revert";
+		copyButton.style.display = "revert";
 		copyButton.disabled = false;
+
 		textarea.remove();
 		viewArea.style.display = "block";
 		hljs.highlightAll();
+	}
+
+	async function createPaste(content) {
+		await fetch("/api/paste", {
+			method: "POST",
+			headers: {"Content-Type": "application/json"},
+			body: content,
+		}).then((res) => {
+			if (res.ok) {
+				window.location.href = res.url;
+			}
+		});
 	}
 });
