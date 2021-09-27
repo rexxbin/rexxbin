@@ -41,8 +41,7 @@ func main() {
 
 	router.GET("/v/:id", handlers.ViewHandler)
 
-	router.GET("/v/:id/raw", func(ctx *gin.Context) {
-	})
+	router.GET("/v/:id/raw", handlers.RawHandler)
 
 	err := router.Run(getPort())
 	if err != nil {
