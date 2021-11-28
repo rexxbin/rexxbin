@@ -3,7 +3,7 @@ module rexxbin
 go 1.17
 
 require (
-	github.com/gin-gonic/gin v1.7.4
+	github.com/gin-gonic/gin v1.7.7
 	github.com/joho/godotenv v1.4.0
 	github.com/rs/xid v1.3.0
 	go.mongodb.org/mongo-driver v1.7.2
