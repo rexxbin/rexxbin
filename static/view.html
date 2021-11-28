@@ -28,13 +28,15 @@
 			</div>
 
 			<div class="actions">
-				<button disabled id="save"><i data-feather="save"></i></button>
+				<button id="copy"><i data-feather="copy"></i></button>
+				<button id="raw"><i data-feather="code"></i></button>
 				<button id="new"><i data-feather="plus-square"></i></button>
 			</div>
 		</header>
 
 		<main role="main" class="flex-grow-1 overflow-auto">
-			<textarea id="content" placeholder="Paste code, save and share the link!" spellcheck="false"></textarea>
+			<textarea readonly="true" spellcheck="false"></textarea>
+			<pre id="view-code"><code>{{ .body }}</code></pre>
 		</main>
 
 		<footer>
@@ -56,7 +58,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
 	<script src="https://kit.fontawesome.com/e17019efc5.js" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script src="https://cdn.statically.io/gh/rexxbin/rexxbin/develop/static/js/app.js"></script>
+	<script src="https://cdn.statically.io/gh/rexxbin/rexxbin/develop/static/js/view.js"></script>
 </body>
 
 </html>

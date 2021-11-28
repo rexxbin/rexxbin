@@ -1,11 +1,12 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
 	"os"
 	"rexxbin/handlers"
+
+	"github.com/gin-gonic/gin"
 )
 
 func getPort() string {

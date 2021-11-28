@@ -1,12 +1,13 @@
 package handlers
 
 import (
-	"github.com/gin-gonic/gin"
-	"go.mongodb.org/mongo-driver/bson"
 	"log"
 	"net/http"
 	"rexxbin/database"
 	"rexxbin/models"
+
+	"github.com/gin-gonic/gin"
+	"go.mongodb.org/mongo-driver/bson"
 )
 
 func ViewHandler(ctx *gin.Context) {
@@ -19,7 +20,7 @@ func ViewHandler(ctx *gin.Context) {
 		log.Fatalln(err)
 	}
 
-	ctx.HTML(http.StatusOK, "index.html", gin.H{
+	ctx.HTML(http.StatusOK, "view.html", gin.H{
 		"title": "Paste - " + paste.ID,
 		"year":  2021,
 		"body":  paste.Content,
